@@ -13,11 +13,12 @@ _Top-quality datasets, tools, and ideas for enhancing Large Language Models (LLM
   - [⚙️ Pre-Training Datasets](#️-pre-training-datasets)
   - [🛠️ Supervised Fine-Tuning Datasets](#️-supervised-fine-tuning-datasets)
     - [General-Purpose Datasets](#general-purpose-datasets)
-    - [🧮 Math \& Logic](#-math--logic)
+    - [🧮 Math & Logic](#-math--logic)
     - [💻 Code](#-code)
-    - [🗣️ Conversation \& Role-Play](#️-conversation--role-play)
-    - [🤖 Agent \& Function Calling](#-agent--function-calling)
+    - [🗣️ Conversation & Role-Play](#️-conversation--role-play)
+    - [🤖 Agent & Function Calling](#-agent--function-calling)
   - [⚖️ Preference Alignment Datasets](#️-preference-alignment-datasets)
+  - [🧠 Reasoning Datasets](#-reasoning-datasets)
   - [🛠️ Tools for Creating High-Quality Datasets](#️-tools-for-creating-high-quality-datasets)
     - [🧹 Data Deduplication and Cleaning](#-data-deduplication-and-cleaning)
     - [✅ Evaluating Data Quality](#-evaluating-data-quality)
@@ -47,7 +48,6 @@ A high-quality dataset is the backbone of any successful LLM. But what exactly m
 Evaluating these aspects can be tricky. For example, checking accuracy is straightforward for math problems but less so for open-ended questions. Diversity can be measured by the range of topics covered, and complexity can be assessed using other language models as evaluators.
 
 ---
-
 ## 📚 Open-Source Datasets
 
 ## ⚙️ Pre-Training Datasets
@@ -171,6 +171,20 @@ Preference datasets for Direct Preference Optimization (DPO) are essential for a
 | [truthy-dpo-v0.1](https://huggingface.co/datasets/jondurbin/truthy-dpo-v0.1)                                                       | 1k       | Jon Durbin       | June 2024  | Truthy DPO is a dataset aimed at improving the truthfulness of LLMs while maintaining immersive roleplay by focusing on corporeal, spatial, temporal awareness, and correcting common misconceptions.                                                                                                                                                                 |
 | [toxic-dpo-v0.2](https://huggingface.co/datasets/unalignment/toxic-dpo-v0.2)                                                       | 541      | Unalignment      | Jan 2024   | The Toxic-DPO dataset contains harmful and toxic content intended to demonstrate how direct-preference-optimization (DPO) can de-censor a model, with usage restricted to lawful, non-malicious academic or research purposes, and users assuming full responsibility for its use.                                                                                    |
 
+---
+## 🧠 Reasoning Datasets
+
+These datasets focus on enhancing the reasoning capabilities of LLMs by providing distilled synthetic examples from advanced reasoning models such as DeepSeek AI R1, Qwen QwQ, or Google DeepMind Flash Thinking. Curated from Hugging Face’s [Reasoning Datasets collection](https://huggingface.co/collections/philschmid/reasoning-datasets-679f57ff20e5b46b4ef4d3dd) , they offer diverse challenges that improve chain-of-thought and problem-solving skills.
+
+| **Dataset**                                                                                                                        | **Size** | **Authors**      | **Date**   | **Description**                                                                                                                                                                                                                 |
+|------------------------------------------------------------------------------------------------------------------------------------|----------|------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ServiceNow-AI/R1-Distill-SFT](https://huggingface.co/datasets/ServiceNow-AI/R1-Distill-SFT)                                       | 1.7M     | ServiceNow-AI    | Jan 2025   | 1.7M samples distilled from DeepSeek-R1-Distill-Qwen-32B from 9 different source datasets (unfiltered yet).                                                                              |
+| [open-thoughts/OpenThoughts-114k](https://huggingface.co/datasets/open-thoughts/OpenThoughts-114k)                                 | 114k     | open-thoughts    | Jan 2025   | 114k samples distilled from DeepSeek R1 on math, science, code, and puzzles.                                                                                                             |
+| [bespokelabs/Bespoke-Stratos-17k](https://huggingface.co/datasets/bespokelabs/Bespoke-Stratos-17k)                                 | 17k      | bespokelabs      | Jan 2025   | 17k samples distilled from DeepSeek R1; generated in 1.5 hours at a cost of $800.                                                                                                        |
+| [EricLu/SCP-116K](https://huggingface.co/datasets/EricLu/SCP-116K)                                                                 | 116k     | EricLu           | Jan 2025   | 116k scientific problem-solution pairs, automatically extracted from web-crawled documents solved by QwQ and o1-mini.                                                                    |
+| [cognitivecomputations/dolphin-r1](https://huggingface.co/datasets/cognitivecomputations/dolphin-r1)                               | 300k     | cognitivecomputations | Jan 2025   | 300k samples distilled from DeepSeek R1 and Gemini 2.0 Flash Thinking with prompts from open-orca.                                                                                       |
+| [Magpie-Align/Magpie-Reasoning-V2-250K-CoT-Deepseek-R1-Llama-70B](https://huggingface.co/datasets/Magpie-Align/Magpie-Reasoning-V2-250K-CoT-Deepseek-R1-Llama-70B) | 250k     | Magpie-Align     | Jan 2025   | 250k samples distilled from DeepSeek-R1-Distill-Llama-70B using the MagPie format (letting the model generate both the prompt and the reasoning).                                         |
+| [AymanTarig/function-calling-v0.2-with-r1-cot](https://huggingface.co/datasets/AymanTarig/function-calling-v0.2-with-r1-cot)        | 58k      | AymanTarig       | Jan 2025   | 58k distilled function call samples with reasoning (proposed distilled from DeepSeek-R1-Distill-Llama-70B based on a prompt format).                                                     |
 ---
 
 ## 🛠️ Tools for Creating High-Quality Datasets
